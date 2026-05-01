@@ -1,19 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { identity, stats, about } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aiden Khan — High Velocity Engineering" },
+      { title: `${identity.fullName} — Portfolio` },
       {
         name: "description",
-        content:
-          "Portfolio of Aiden Khan, computer science student and full-stack intern engineering high-performance, low-latency digital systems.",
+        content: identity.bio,
       },
+      { property: "og:title", content: `${identity.fullName} — Portfolio` },
+      { property: "og:description", content: identity.bio },
     ],
   }),
   component: Home,
 });
+
+// Render text where any {{word}} becomes the accent color.
+function renderAccented(text: string) {
+  const parts = text.split(/(\{\{[^}]+\}\})/g);
+  return parts.map((p, i) =>
+    p.startsWith("{{") && p.endsWith("}}") ? (
+      <span key={i} className="text-mach">{p.slice(2, -2)}</span>
+    ) : (
+      <span key={i}>{p}</span>
+    ),
+  );
+}
 
 function Home() {
   return (
@@ -30,20 +44,19 @@ function Home() {
           <div className="inline-flex items-center gap-3 bg-secondary/60 border border-border py-2 px-4 w-fit skew-tilt">
             <span className="size-2 rounded-full bg-mach animate-pulse" />
             <span className="text-[10px] font-mono uppercase tracking-[0.3em] unskew-tilt">
-              Junior Systems Architect // Intern @ Vector Dynamics
+              {identity.role}
             </span>
           </div>
 
           <h1 className="text-[64px] sm:text-[88px] md:text-[120px] leading-[0.85] font-bold italic tracking-tighter uppercase">
-            High <span className="text-mach text-mach-glow">Velocity</span>
+            {identity.tagline.line1}{" "}
+            <span className="text-mach text-mach-glow">{identity.tagline.accent}</span>
             <br />
-            Engineering
+            {identity.tagline.line2}
           </h1>
 
           <p className="max-w-[55ch] text-base md:text-xl text-muted-foreground mt-4 leading-relaxed font-light">
-            Hi, I'm Aiden — a computer science student building high-performance
-            digital infrastructure. I specialize in low-latency systems,
-            aggressive UI, and shipping fast.
+            Hi, I'm {identity.fullName}. {identity.bio}
           </p>
 
           <div className="flex flex-wrap gap-4 md:gap-6 mt-8">
@@ -67,12 +80,7 @@ function Home() {
 
           {/* Stats strip */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
-            {[
-              { k: "12+", v: "Shipped Projects" },
-              { k: "3.94", v: "GPA / 4.00" },
-              { k: "8", v: "Languages" },
-              { k: "∞", v: "Caffeine Units" },
-            ].map((s) => (
+            {stats.map((s) => (
               <div key={s.v} className="bg-obsidian p-6 md:p-8">
                 <div className="text-3xl md:text-5xl font-bold text-mach tracking-tighter">
                   {s.k}
@@ -94,20 +102,13 @@ function Home() {
               [ ABOUT_ME ]
             </p>
             <h2 className="text-4xl md:text-5xl font-bold uppercase italic tracking-tighter">
-              Engineered for <span className="text-mach">curiosity</span>
+              {renderAccented(about.headline)}
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-6 text-muted-foreground leading-relaxed">
-            <p className="text-lg">
-              I'm a final-year CS undergraduate at the National University of
-              Sciences. Most of my time is spent breaking systems apart to see
-              how they tick — then rebuilding them with fewer moving parts.
-            </p>
-            <p>
-              Currently interning at Vector Dynamics on a real-time telemetry
-              dashboard. Off the clock, I'm usually playing pickup football,
-              brewing pour-over coffee, or losing at chess online.
-            </p>
+            {about.paragraphs.map((p, i) => (
+              <p key={i} className={i === 0 ? "text-lg" : ""}>{p}</p>
+            ))}
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/academics" className="text-mach text-sm font-bold uppercase tracking-widest hover:underline underline-offset-4">
                 Academics →

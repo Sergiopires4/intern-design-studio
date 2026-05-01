@@ -1,69 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter, SectionHeading } from "@/components/SiteNav";
+import { timeline, courses, identity } from "@/content/portfolio";
 
 export const Route = createFileRoute("/academics")({
   head: () => ({
     meta: [
-      { title: "Academics — Aiden Khan" },
+      { title: `Academics — ${identity.fullName}` },
       {
         name: "description",
-        content:
-          "Academic background, coursework, awards, and research at NUST and beyond.",
+        content: `Academic background, coursework, and experience of ${identity.fullName}.`,
       },
-      { property: "og:title", content: "Academics — Aiden Khan" },
+      { property: "og:title", content: `Academics — ${identity.fullName}` },
       {
         property: "og:description",
-        content: "Academic background, coursework, and research.",
+        content: "Academic background, coursework, and experience.",
       },
     ],
   }),
   component: AcademicsPage,
 });
-
-const timeline = [
-  {
-    period: "2022 — Present",
-    title: "B.S. Computer Science",
-    org: "National University of Sciences & Technology",
-    detail:
-      "Specialization in Distributed Systems. GPA 3.94 / 4.00. Dean's Honor List 2023, 2024.",
-    badge: "ACTIVE",
-  },
-  {
-    period: "Summer 2025",
-    title: "Software Engineering Intern",
-    org: "Vector Dynamics — Real-Time Systems",
-    detail:
-      "Shipped a telemetry dashboard processing 12k events/sec. Cut p99 render latency by 38%.",
-    badge: "INTERNSHIP",
-  },
-  {
-    period: "2024",
-    title: "Undergraduate Research Assistant",
-    org: "HCI Lab, NUST",
-    detail:
-      "Co-author on a paper studying gesture-based input for accessibility-first interfaces.",
-    badge: "RESEARCH",
-  },
-  {
-    period: "2020 — 2022",
-    title: "Pre-Engineering, FSc.",
-    org: "Punjab College",
-    detail: "Top 3% nationally in board examinations. Programming club lead.",
-    badge: "FOUNDATION",
-  },
-];
-
-const courses = [
-  "Distributed Systems",
-  "Operating Systems",
-  "Compilers & Languages",
-  "Computer Networks",
-  "Database Systems",
-  "Algorithms (Adv.)",
-  "Machine Learning",
-  "Computer Graphics",
-];
 
 function AcademicsPage() {
   return (
@@ -80,7 +35,7 @@ function AcademicsPage() {
         <div className="space-y-3 mb-24">
           {timeline.map((t, i) => (
             <div
-              key={t.title}
+              key={t.title + i}
               className={`p-6 md:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-l-4 ${
                 i === 0 ? "border-mach bg-secondary/40" : "border-border bg-card/40"
               }`}
@@ -119,7 +74,7 @@ function AcademicsPage() {
               Selected <span className="text-mach">Coursework</span>
             </h3>
             <p className="text-muted-foreground">
-              The classes that bent my brain in interesting ways.
+              The classes that shaped how I think.
             </p>
           </div>
           <div className="lg:col-span-8 grid grid-cols-2 gap-px bg-border border border-border">
