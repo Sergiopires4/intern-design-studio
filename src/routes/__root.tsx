@@ -37,6 +37,10 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Aiden Khan — High Velocity Engineering" },
+      { name: "twitter:description", content: "Portfolio of Aiden Khan, full-stack intern building high-performance digital systems." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/860cbe6a-af74-4dfa-aece-50e651194edf/id-preview-c5ff370a--949fe99a-211c-497b-97d1-b380e53196d6.lovable.app-1777658363165.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/860cbe6a-af74-4dfa-aece-50e651194edf/id-preview-c5ff370a--949fe99a-211c-497b-97d1-b380e53196d6.lovable.app-1777658363165.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
