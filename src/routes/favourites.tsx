@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter, SectionHeading } from "@/components/SiteNav";
+import { stash, philosophy, identity } from "@/content/portfolio";
 
 export const Route = createFileRoute("/favourites")({
   head: () => ({
     meta: [
-      { title: "Favourites — Aiden Khan" },
+      { title: `Favourites — ${identity.fullName}` },
       {
         name: "description",
-        content:
-          "Off-the-clock essentials: gear, food, sport, music, and the books that reset my brain.",
+        content: `Off-the-clock favourites of ${identity.fullName}: gear, food, sport, and more.`,
       },
-      { property: "og:title", content: "Favourites — Aiden Khan" },
+      { property: "og:title", content: `Favourites — ${identity.fullName}` },
       {
         property: "og:description",
         content: "Gear, food, sport, music — what fuels the engine.",
@@ -19,24 +19,6 @@ export const Route = createFileRoute("/favourites")({
   }),
   component: FavouritesPage,
 });
-
-const stash = [
-  { tag: "GEAR", title: "HHKB Pro Hybrid", note: "Topre switches, no compromise." },
-  { tag: "IDE", title: "Neovim + Lua", note: "Modal editing for life." },
-  { tag: "BEAT", title: "Lo-fi & Drum'n'Bass", note: "Focus tempo: 170 BPM." },
-  { tag: "READ", title: "The Pragmatic Programmer", note: "Re-read once a year." },
-  { tag: "FOOD", title: "Karachi Biryani", note: "Spicy, no shortcuts." },
-  { tag: "DRINK", title: "V60 Pour-Over", note: "Ethiopian, light roast." },
-  { tag: "SPORT", title: "Pickup Football", note: "Left wing, never striker." },
-  { tag: "GAME", title: "Online Chess (1700)", note: "Aggressive openings only." },
-];
-
-const philosophy = [
-  { k: "Ship", v: "Done > perfect. Iterate in production." },
-  { k: "Read", v: "One book, one paper, one repo per month." },
-  { k: "Move", v: "If I haven't sweat today, I haven't lived today." },
-  { k: "Build", v: "Side projects keep curiosity sharp." },
-];
 
 function FavouritesPage() {
   return (
@@ -49,8 +31,8 @@ function FavouritesPage() {
           accent="Stash"
         />
         <p className="text-muted-foreground max-w-2xl mb-16 text-lg">
-          Curated gear, food, and habits that keep the internal clock speed
-          high. Off-the-clock is where ideas come from.
+          Curated gear, food, and habits that keep my internal clock speed
+          high. Off-the-clock is where the ideas come from.
         </p>
 
         {/* Stash grid */}
@@ -80,7 +62,7 @@ function FavouritesPage() {
               Operating <span className="text-mach">Principles</span>
             </h3>
             <p className="text-muted-foreground mt-4">
-              The four words I check myself against every week.
+              The words I check myself against every week.
             </p>
           </div>
           <div className="lg:col-span-7 space-y-px bg-border border border-border">

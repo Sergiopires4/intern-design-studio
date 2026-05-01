@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { identity, contact } from "@/content/portfolio";
 
 const links = [
   { to: "/" as const, label: "Home" },
@@ -13,7 +14,7 @@ export function SiteNav() {
     <nav className="sticky top-0 z-50 px-6 md:px-8 py-4 flex justify-between items-center backdrop-blur-xl border-b border-border bg-obsidian/80">
       <Link to="/" className="flex items-center gap-3 group">
         <div className="size-9 bg-mach flex items-center justify-center skew-tilt shadow-mach-sm">
-          <span className="text-primary-foreground font-bold text-lg unskew-tilt">AK</span>
+          <span className="text-primary-foreground font-bold text-lg unskew-tilt">{identity.initials}</span>
         </div>
         <span className="font-mono font-bold tracking-tighter text-xs hidden sm:inline">
           SYSTEM_STATUS:&nbsp;<span className="text-mach">ACTIVE</span>
@@ -33,7 +34,7 @@ export function SiteNav() {
         ))}
       </div>
       <a
-        href="mailto:hello@example.com"
+        href={`mailto:${contact.email}`}
         className="hidden sm:inline-block bg-secondary border border-border px-5 py-2 text-[10px] font-bold uppercase tracking-widest skew-tilt hover:bg-mach hover:text-primary-foreground transition-all"
       >
         <span className="unskew-tilt inline-block">Execute_Contact</span>
@@ -43,20 +44,21 @@ export function SiteNav() {
 }
 
 export function SiteFooter() {
+  const year = new Date().getFullYear();
   return (
     <footer className="px-6 md:px-8 py-10 border-t border-border mt-24">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest text-center md:text-left">
-          © 2026 SYSTEM_VOSS // PROTOCOL_V3.0 // BUILT_FOR_SPEED
+          © {year} {identity.fullName} // PROTOCOL_V3.0 // BUILT_FOR_SPEED
         </div>
         <div className="flex gap-6 md:gap-8 text-[10px] font-bold uppercase tracking-widest">
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-mach transition-colors">
+          <a href={contact.github} target="_blank" rel="noreferrer" className="hover:text-mach transition-colors">
             Github
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-mach transition-colors">
+          <a href={contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-mach transition-colors">
             LinkedIn
           </a>
-          <a href="mailto:hello@example.com" className="hover:text-mach transition-colors">
+          <a href={`mailto:${contact.email}`} className="hover:text-mach transition-colors">
             Email
           </a>
         </div>

@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter, SectionHeading } from "@/components/SiteNav";
+import { services, skills, identity } from "@/content/portfolio";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Skills — Aiden Khan" },
+      { title: `Services & Skills — ${identity.fullName}` },
       {
         name: "description",
-        content:
-          "What I build: full-stack web apps, real-time systems, and developer tooling. Skill telemetry included.",
+        content: `What ${identity.fullName} builds, and the stack behind it.`,
       },
-      { property: "og:title", content: "Services & Skills — Aiden Khan" },
+      { property: "og:title", content: `Services & Skills — ${identity.fullName}` },
       {
         property: "og:description",
         content: "What I build and the stack I run.",
@@ -19,41 +19,6 @@ export const Route = createFileRoute("/services")({
   }),
   component: ServicesPage,
 });
-
-const services = [
-  {
-    n: "01",
-    title: "Full-Stack Web Apps",
-    body: "End-to-end product builds. From database schema and auth to a polished interface that ships.",
-    tags: ["React", "Next.js", "PostgreSQL"],
-  },
-  {
-    n: "02",
-    title: "Real-Time Systems",
-    body: "Low-latency dashboards, streaming pipelines, and WebSocket-driven UIs that don't drop frames.",
-    tags: ["Rust", "Go", "WebGL"],
-  },
-  {
-    n: "03",
-    title: "Developer Tooling",
-    body: "CLI utilities, internal libraries, and DX improvements that quietly save your team hours.",
-    tags: ["Node.js", "TypeScript", "CLI"],
-  },
-  {
-    n: "04",
-    title: "Performance Audits",
-    body: "Find the bottleneck, fix the bottleneck, ship a measured before/after. No vibes-based optimization.",
-    tags: ["Profiling", "Lighthouse", "DevTools"],
-  },
-];
-
-const skills = [
-  { name: "Backend_Core", value: 94 },
-  { name: "Frontend_Optics", value: 90 },
-  { name: "Systems_Programming", value: 78 },
-  { name: "Cloud_Ops", value: 72 },
-  { name: "Design_Systems", value: 85 },
-];
 
 function ServicesPage() {
   return (
