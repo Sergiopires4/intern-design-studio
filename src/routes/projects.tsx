@@ -60,8 +60,20 @@ function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border pt-4">
-                ROLE: <span className="text-foreground">{p.role}</span>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground border-t border-border pt-4 flex items-center justify-between gap-4">
+                <span>
+                  ROLE: <span className="text-foreground">{p.role}</span>
+                </span>
+                {"link" in p && p.link ? (
+                  <a
+                    href={p.link as string}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-mach hover:underline"
+                  >
+                    GITHUB →
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
