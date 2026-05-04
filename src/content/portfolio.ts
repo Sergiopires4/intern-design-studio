@@ -49,53 +49,51 @@ export const about = {
 // ----- 5. PROJECTS (Portfolio section) ----------------------------
 export const projects = [
   {
-    id: "{{PROJECT_ONE}}",
-    date: "{{MM/YY}}",
-    blurb: "{{One sentence describing what the project does and why it's cool.}}",
-    stack: ["{{TECH_1}}", "{{TECH_2}}", "{{TECH_3}}"],
-    role: "{{Solo build / Team of N / Open source}}",
+    id: "Flip Cards UI",
+    date: "03/22",
+    blurb:
+      "An interactive card UI with flip animations, showcasing front-end skills in animations and responsive design.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    role: "Solo build",
+    link: "https://github.com/Sergiopires4/flip-cards.github.io.git",
   },
   {
-    id: "{{PROJECT_TWO}}",
-    date: "{{MM/YY}}",
-    blurb: "{{One sentence describing the project.}}",
-    stack: ["{{TECH_1}}", "{{TECH_2}}"],
-    role: "{{Your role}}",
+    id: "Parallax Scrolling Website",
+    date: "04/19",
+    blurb:
+      "A visually engaging website using parallax scrolling effects to create depth and smooth user experience.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    role: "Solo build",
+    link: "https://github.com/Sergiopires4/parallaxscrolling.git",
   },
-  {
-    id: "{{PROJECT_THREE}}",
-    date: "{{MM/YY}}",
-    blurb: "{{One sentence describing the project.}}",
-    stack: ["{{TECH_1}}", "{{TECH_2}}"],
-    role: "{{Your role}}",
-  },
-  // Add or remove cards as needed.
 ];
 
 // ----- 6. ACADEMICS (timeline + coursework) -----------------------
 export const timeline = [
   {
-    period: "{{2022 — Present}}",
-    title: "{{Degree e.g. B.S. Computer Science}}",
-    org: "{{University Name}}",
-    detail: "{{Specialisation, GPA, honors, anything notable.}}",
+    period: "2022 — Present",
+    title: "B.S. in Computer Science",
+    org: "University of Debrecen",
+    detail:
+      "GPA: 3.7 / 4.0. Focused on web development and software engineering.",
     badge: "ACTIVE",
   },
   {
-    period: "{{Summer 2025}}",
-    title: "{{Internship / Position}}",
-    org: "{{Company / Lab}}",
-    detail: "{{What you built or learned.}}",
-    badge: "INTERNSHIP",
+    period: "Ongoing",
+    title: "Seeking Internship",
+    org: "Open to opportunities",
+    detail:
+      "Currently seeking internship opportunities in web development.",
+    badge: "AVAILABLE",
   },
   {
-    period: "{{2020 — 2022}}",
-    title: "{{Pre-degree e.g. FSc Pre-Engineering}}",
-    org: "{{College Name}}",
-    detail: "{{Grades, achievements, clubs.}}",
+    period: "Pre-2022",
+    title: "High School / Pre-University Education",
+    org: "Previous School",
+    detail:
+      "Completed pre-university education with focus on science and mathematics.",
     badge: "FOUNDATION",
   },
-  // Add or remove rows as needed.
 ];
 
 export const courses = [
