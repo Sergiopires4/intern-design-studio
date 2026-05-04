@@ -10,16 +10,16 @@
 
 // ----- 1. IDENTITY -------------------------------------------------
 export const identity = {
-  fullName: "{{YOUR_FULL_NAME}}",            // e.g. "Ayesha Khan"
-  initials: "{{IN}}",                        // 2 letters for the logo, e.g. "AK"
-  role: "{{YOUR_ROLE}}",                     // e.g. "Junior Web Developer // Intern @ LimeLight"
+  fullName: "Sergio Matveiev",
+  initials: "SM",
+  role: "Web Developer",
   tagline: {
-    line1: "{{TAGLINE_LINE_1}}",             // e.g. "High Velocity"
-    accent: "{{TAGLINE_ACCENT}}",            // colored word, e.g. "Engineering"
-    line2: "{{TAGLINE_LINE_2}}",             // e.g. "Web Developer"
+    line1: "Building Modern",
+    accent: "& Functional",
+    line2: "Web Experiences",
   },
-  bio: "{{SHORT_BIO}} — one or two sentences about who you are and what you build.",
-  location: "{{CITY, COUNTRY}}",
+  bio: "A dedicated web developer passionate about learning, solving problems, and building clean, functional digital experiences.",
+  location: "Debrecen, Hungary",
 };
 
 // ----- 2. CONTACT & SOCIAL ----------------------------------------
@@ -31,18 +31,18 @@ export const contact = {
 
 // ----- 3. HOMEPAGE STATS (4 items) --------------------------------
 export const stats = [
-  { k: "{{12+}}", v: "{{Shipped Projects}}" },
-  { k: "{{3.9}}", v: "{{GPA / 4.0}}" },
-  { k: "{{5}}",   v: "{{Languages}}" },
-  { k: "{{∞}}",   v: "{{Cups of Chai}}" },
+  { k: "5+", v: "Projects Completed" },
+  { k: "3.7", v: "GPA / 4.0" },
+  { k: "4+", v: "Technologies" },
+  { k: "∞", v: "Cups of Chai" },
 ];
 
 // ----- 4. ABOUT (homepage snapshot) -------------------------------
 export const about = {
-  headline: "Engineered for {{curiosity}}", // wrap one word in {{ }} to highlight
+  headline: "Engineered for {{clarity}}", // wrap one word in {{ }} to highlight
   paragraphs: [
-    "{{Paragraph 1 — who you are, where you study, what you focus on.}}",
-    "{{Paragraph 2 — what you're working on right now and what you do off the clock.}}",
+    "I'm Sergio Matveiev, a web developer and student at the University of Debrecen, focused on building clean, functional, and user-friendly applications. I have a strong interest in modern web development and enjoy turning ideas into practical digital solutions.",
+    "I'm currently working on personal projects to improve my development skills and deepen my understanding of real-world web applications. Outside of coding, I enjoy exploring new technologies, refining my workflow, and staying consistent with my goals.",
   ],
 };
 
