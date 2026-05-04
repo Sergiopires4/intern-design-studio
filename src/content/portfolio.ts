@@ -107,7 +107,31 @@ export const courses = [
   "Operating Systems",
 ];
 
-// ----- 7. FAVOURITES + PHILOSOPHY ---------------------------------
+// ----- 7. SKILLS --------------------------------------------------
+export const skills = [
+  {
+    category: "Frontend",
+    tag: "FE",
+    items: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    category: "Backend",
+    tag: "BE",
+    items: ["Basic backend knowledge"],
+  },
+  {
+    category: "Data Analysis",
+    tag: "DA",
+    items: ["Basic data analysis skills"],
+  },
+  {
+    category: "Web Design",
+    tag: "WD",
+    items: ["Responsive design", "UI/UX fundamentals"],
+  },
+];
+
+// ----- 8. FAVOURITES + PHILOSOPHY ---------------------------------
 export const stash = [
   { tag: "GEAR",  title: "Laptop",              note: "My main tool for coding, learning, and building projects every day." },
   { tag: "IDE",   title: "VS Code",             note: "Lightweight, powerful, and perfect for modern web development." },
