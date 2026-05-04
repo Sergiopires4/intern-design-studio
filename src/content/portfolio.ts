@@ -97,67 +97,28 @@ export const timeline = [
 ];
 
 export const courses = [
-  "{{Course 1}}",
-  "{{Course 2}}",
-  "{{Course 3}}",
-  "{{Course 4}}",
-  "{{Course 5}}",
-  "{{Course 6}}",
-  "{{Course 7}}",
-  "{{Course 8}}",
+  "Programming",
+  "Object-Oriented Programming",
+  "Data Structures and Algorithms",
+  "Web Development",
+  "Database Systems",
+  "Software Engineering",
+  "Computer Networks",
+  "Operating Systems",
 ];
 
-// ----- 7. SERVICES + SKILLS ---------------------------------------
-export const services = [
-  {
-    n: "01",
-    title: "{{Service Title 1}}",
-    body: "{{Short description of what you offer.}}",
-    tags: ["{{Tool}}", "{{Tool}}", "{{Tool}}"],
-  },
-  {
-    n: "02",
-    title: "{{Service Title 2}}",
-    body: "{{Short description.}}",
-    tags: ["{{Tool}}", "{{Tool}}"],
-  },
-  {
-    n: "03",
-    title: "{{Service Title 3}}",
-    body: "{{Short description.}}",
-    tags: ["{{Tool}}", "{{Tool}}"],
-  },
-  {
-    n: "04",
-    title: "{{Service Title 4}}",
-    body: "{{Short description.}}",
-    tags: ["{{Tool}}", "{{Tool}}"],
-  },
-];
-
-export const skills = [
-  { name: "{{Skill_One}}",   value: 90 },
-  { name: "{{Skill_Two}}",   value: 80 },
-  { name: "{{Skill_Three}}", value: 75 },
-  { name: "{{Skill_Four}}",  value: 70 },
-  { name: "{{Skill_Five}}",  value: 65 },
-];
-
-// ----- 8. FAVOURITES + PHILOSOPHY ---------------------------------
+// ----- 7. FAVOURITES + PHILOSOPHY ---------------------------------
 export const stash = [
-  { tag: "GEAR",  title: "{{Favourite gear / device}}", note: "{{Why you love it.}}" },
-  { tag: "IDE",   title: "{{Favourite editor}}",        note: "{{Why.}}" },
-  { tag: "BEAT",  title: "{{Favourite music}}",         note: "{{Why.}}" },
-  { tag: "READ",  title: "{{Favourite book}}",          note: "{{Why.}}" },
-  { tag: "FOOD",  title: "{{Favourite food}}",          note: "{{Why.}}" },
-  { tag: "DRINK", title: "{{Favourite drink}}",         note: "{{Why.}}" },
-  { tag: "SPORT", title: "{{Favourite sport}}",         note: "{{Why.}}" },
-  { tag: "GAME",  title: "{{Favourite game}}",          note: "{{Why.}}" },
+  { tag: "GEAR",  title: "Laptop",              note: "My main tool for coding, learning, and building projects every day." },
+  { tag: "IDE",   title: "VS Code",             note: "Lightweight, powerful, and perfect for modern web development." },
+  { tag: "BEAT",  title: "Lo-fi / Chill beats", note: "Helps me stay focused and consistent while coding." },
+  { tag: "READ",  title: "Atomic Habits",       note: "A great book about building discipline and improving daily routines." },
+  { tag: "FOOD",  title: "Simple home meals",   note: "Keeps me energized without overcomplicating things." },
+  { tag: "DRINK", title: "Fruit Juice",         note: "Refreshing and keeps me energized throughout the day." },
+  { tag: "SPORT", title: "Gym / Basketball",    note: "Helps me stay disciplined, active, and maintain a strong mindset." },
+  { tag: "GAME",  title: "Batman: Arkham Knight", note: "I enjoy immersive games with strong storytelling and gameplay mechanics." },
 ];
 
 export const philosophy = [
-  { k: "{{Word1}}", v: "{{One-line principle you live by.}}" },
-  { k: "{{Word2}}", v: "{{One-line principle.}}" },
-  { k: "{{Word3}}", v: "{{One-line principle.}}" },
-  { k: "{{Word4}}", v: "{{One-line principle.}}" },
+  { k: "Consistency", v: "Consistency over motivation." },
 ];
