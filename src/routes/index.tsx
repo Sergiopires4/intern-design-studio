@@ -69,11 +69,11 @@ function Home() {
               </span>
             </Link>
             <Link
-              to="/services"
+              to="/academics"
               className="px-8 md:px-10 py-4 md:py-5 border border-border skew-tilt hover:border-mach transition-colors"
             >
               <span className="unskew-tilt inline-block text-base md:text-lg font-bold uppercase tracking-tighter">
-                The Stack
+                Academics
               </span>
             </Link>
           </div>

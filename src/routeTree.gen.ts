@@ -9,17 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as FavouritesRouteImport } from './routes/favourites'
 import { Route as AcademicsRouteImport } from './routes/academics'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -46,14 +40,12 @@ export interface FileRoutesByFullPath {
   '/academics': typeof AcademicsRoute
   '/favourites': typeof FavouritesRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/academics': typeof AcademicsRoute
   '/favourites': typeof FavouritesRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,20 +53,13 @@ export interface FileRoutesById {
   '/academics': typeof AcademicsRoute
   '/favourites': typeof FavouritesRoute
   '/projects': typeof ProjectsRoute
-  '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/academics' | '/favourites' | '/projects' | '/services'
+  fullPaths: '/' | '/academics' | '/favourites' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/academics' | '/favourites' | '/projects' | '/services'
-  id:
-    | '__root__'
-    | '/'
-    | '/academics'
-    | '/favourites'
-    | '/projects'
-    | '/services'
+  to: '/' | '/academics' | '/favourites' | '/projects'
+  id: '__root__' | '/' | '/academics' | '/favourites' | '/projects'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -82,18 +67,10 @@ export interface RootRouteChildren {
   AcademicsRoute: typeof AcademicsRoute
   FavouritesRoute: typeof FavouritesRoute
   ProjectsRoute: typeof ProjectsRoute
-  ServicesRoute: typeof ServicesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -130,7 +107,6 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicsRoute: AcademicsRoute,
   FavouritesRoute: FavouritesRoute,
   ProjectsRoute: ProjectsRoute,
-  ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
