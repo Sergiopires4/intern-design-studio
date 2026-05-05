@@ -1,5 +1,5 @@
-import { T as jsxRuntimeExports } from "./worker-entry-DH21p3qm.js";
-import { L as Link, i as identity, f as contact } from "./router-Ag84TuKJ.js";
+import { T as jsxRuntimeExports } from "./worker-entry-BF9zIABg.js";
+import { L as Link, i as identity, f as contact } from "./router-Bc5Ctjtu.js";
 const links = [
   { to: "/", label: "Home" },
   { to: "/projects", label: "Projects" },
