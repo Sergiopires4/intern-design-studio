@@ -1,26 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter, SectionHeading } from "@/components/SiteNav";
-import { projects, identity } from "@/content/portfolio";
+import { projects } from "@/content/portfolio";
 
-export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: `Projects — ${identity.fullName}` },
-      {
-        name: "description",
-        content: `Selected coding projects by ${identity.fullName}.`,
-      },
-      { property: "og:title", content: `Projects — ${identity.fullName}` },
-      {
-        property: "og:description",
-        content: `Selected coding projects by ${identity.fullName}.`,
-      },
-    ],
-  }),
-  component: ProjectsPage,
-});
-
-function ProjectsPage() {
+export default function ProjectsPage() {
   return (
     <div className="carbon-mesh min-h-dvh">
       <SiteNav />

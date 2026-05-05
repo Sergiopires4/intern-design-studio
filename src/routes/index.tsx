@@ -1,23 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { identity, stats, about } from "@/content/portfolio";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: `${identity.fullName} — Portfolio` },
-      {
-        name: "description",
-        content: identity.bio,
-      },
-      { property: "og:title", content: `${identity.fullName} — Portfolio` },
-      { property: "og:description", content: identity.bio },
-    ],
-  }),
-  component: Home,
-});
-
-// Render text where any {{word}} becomes the accent color.
 function renderAccented(text: string) {
   const parts = text.split(/(\{\{[^}]+\}\})/g);
   return parts.map((p, i) =>
@@ -29,7 +13,7 @@ function renderAccented(text: string) {
   );
 }
 
-function Home() {
+export default function Home() {
   return (
     <div className="carbon-mesh min-h-dvh">
       <SiteNav />

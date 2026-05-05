@@ -1,12 +1,12 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { identity, contact } from "@/content/portfolio";
 
 const links = [
-  { to: "/" as const, label: "Home" },
-  { to: "/projects" as const, label: "Projects" },
-  { to: "/academics" as const, label: "Academics" },
-  { to: "/skills" as const, label: "Skills" },
-  { to: "/favourites" as const, label: "Favourites" },
+  { to: "/", label: "Home" },
+  { to: "/projects", label: "Projects" },
+  { to: "/academics", label: "Academics" },
+  { to: "/skills", label: "Skills" },
+  { to: "/favourites", label: "Favourites" },
 ];
 
 export function SiteNav() {
@@ -22,15 +22,18 @@ export function SiteNav() {
       </Link>
       <div className="hidden md:flex gap-8 lg:gap-10 text-xs font-medium tracking-widest uppercase">
         {links.map((l) => (
-          <Link
+          <NavLink
             key={l.to}
             to={l.to}
-            className="text-foreground/80 hover:text-mach transition-colors"
-            activeProps={{ className: "text-mach" }}
-            activeOptions={{ exact: true }}
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "text-mach transition-colors"
+                : "text-foreground/80 hover:text-mach transition-colors"
+            }
           >
             {l.label}
-          </Link>
+          </NavLink>
         ))}
       </div>
       <a
