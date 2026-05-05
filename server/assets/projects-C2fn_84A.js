@@ -1,6 +1,6 @@
-import { T as jsxRuntimeExports } from "./worker-entry-BF9zIABg.js";
-import { S as SiteNav, a as SectionHeading, b as SiteFooter } from "./SiteNav-qmAMNcgt.js";
-import { p as projects } from "./router-Bc5Ctjtu.js";
+import { T as jsxRuntimeExports } from "./worker-entry-DH21p3qm.js";
+import { S as SiteNav, a as SectionHeading, b as SiteFooter } from "./SiteNav-B3XZMn3X.js";
+import { p as projects } from "./router-Ag84TuKJ.js";
 import "node:events";
 import "node:async_hooks";
 import "node:stream/web";
