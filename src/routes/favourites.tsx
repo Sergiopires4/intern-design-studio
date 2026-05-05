@@ -1,26 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter, SectionHeading } from "@/components/SiteNav";
-import { stash, philosophy, identity } from "@/content/portfolio";
+import { stash, philosophy } from "@/content/portfolio";
 
-export const Route = createFileRoute("/favourites")({
-  head: () => ({
-    meta: [
-      { title: `Favourites — ${identity.fullName}` },
-      {
-        name: "description",
-        content: `Off-the-clock favourites of ${identity.fullName}: gear, food, sport, and more.`,
-      },
-      { property: "og:title", content: `Favourites — ${identity.fullName}` },
-      {
-        property: "og:description",
-        content: "Gear, food, sport, music — what fuels the engine.",
-      },
-    ],
-  }),
-  component: FavouritesPage,
-});
-
-function FavouritesPage() {
+export default function FavouritesPage() {
   return (
     <div className="carbon-mesh min-h-dvh">
       <SiteNav />
